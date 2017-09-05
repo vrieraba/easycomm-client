@@ -1,0 +1,30 @@
+<h2>Here are some users: </h2>
+<li *ngFor="let i of users">
+	<div class="user">
+		<span> <b> Name: </b> {{ i.name }}  || </span>
+		<span> <b> Age: </b> {{ i.age }} </span>
+		<span> <button class="btn btn-primary" (click)="details(i.id)"> details </button> </span>
+	</div>
+</li> 
+
+<hr>
+
+<div class="user-creator">
+	<label> {{ nameModel }} </label>
+	<div>
+		<input [(ngModel)]="nameModel" placeholder="Enter name.." class="form-control">
+	</div>
+	<label> {{ ageModel }} </label>
+	<div>
+		<input [(ngModel)]="ageModel" placeholder="Enter age.." class="form-control">
+	</div>
+	<hr>
+    <div>
+        <textarea type="textarea" rows="4" cols="20" [(ngModel)]="detailsModel" placeholder="details" class="form-control">
+        </textarea>
+    </div>
+
+	<br>
+
+	<button class="btn btn-primary btn-md" (click)="createUser()"> Create </button>
+</div>
